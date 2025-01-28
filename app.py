@@ -5,7 +5,10 @@ import base64
 from langchain_community.llms import OpenAI
 from openai import OpenAI as OpenAIClient
 
-# Sidebar - OpenAI API Key Input
+# Sidebar - Logo and OpenAI API Key Input
+logo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/OpenAI_Logo.svg/1200px-OpenAI_Logo.svg.png"
+st.sidebar.image(logo_url, use_column_width=True)
+st.sidebar.title("AI Multitool App")
 openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
 
 # Dropdown Menu for Navigation
@@ -188,8 +191,6 @@ elif selected_tab == "🛠 Functions":
 
             except Exception as e:
                 st.error(f"Error: {str(e)}")
-
-
 
 elif selected_tab == "🧠 Reasoning":
     st.title("🧠 AI Reasoning")
